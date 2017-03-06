@@ -1,0 +1,14 @@
+if (project.file("${rootDir}/gradle/credentials.gradle").exists())
+    apply from: "${rootDir}/gradle/credentials.gradle"
+
+jenkins {
+    servers {
+        main {
+            url 'http://localhost:8080/jenkins'
+        }
+    }
+    servers.each { server ->
+        if (project.hasProperty('jenkinsUser')) server.username = ext.jenkinsUser
+        if (project.hasProperty('jenkinsPassword')) server.password = ext.jenkinsPassword
+    }
+}

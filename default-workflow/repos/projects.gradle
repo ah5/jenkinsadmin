@@ -1,0 +1,15 @@
+ext.gitProjects = [
+	'testProject': 'testRepository',
+]
+
+ext.allRepos = gitProjects.keySet()
+
+ext.disable = []
+
+ext.buildables = allRepos
+ext.deployables = allRepos
+
+ext.jdks = [
+].withDefault({ '(Default)' })
+
+ext.assignedLabel = []

@@ -1,0 +1,8 @@
+apply plugin: 'com.terrafolio.jenkins'
+
+jenkins {
+    servers.addAll(rootProject.jenkins.servers)
+}
+
+apply from: 'repos/projects.gradle'
+apply from: 'jobs/ci-jobs.gradle'
